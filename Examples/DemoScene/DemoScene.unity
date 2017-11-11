@@ -58,9 +58,9 @@ LightmapSettings:
     m_BakeResolution: 50
     m_TextureWidth: 1024
     m_TextureHeight: 1024
-    m_AO: 0
+    m_AO: 1
     m_AOMaxDistance: 1
-    m_CompAOExponent: 0
+    m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
@@ -69,7 +69,7 @@ LightmapSettings:
     m_DirectLightInLightProbes: 1
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 1024
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
   m_LightingDataAsset: {fileID: 0}
   m_RuntimeCPUUsage: 25
@@ -90,6 +90,27 @@ NavMeshSettings:
     cellSize: 0.16666666
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &18772612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b65fb624734e77bfcbccd76b526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackNb: 1
+  _filtersHandler: {fileID: 528342552}
+  _nextMute: 0
+  _player: {fileID: 696357638}
+  _gains:
+  - 0.4041096
+  - 0.5958904
+  _stereoGain: 1
+  _stereoPan: 0.5958904
+  _forcePerChannelControl: 0
 --- !u!1 &36347501
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,7 +139,7 @@ ParticleSystemRenderer:
   m_ReceiveShadows: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
@@ -129,7 +150,7 @@ ParticleSystemRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedWireframeHidden: 1
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -1990,11 +2011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulse: {fileID: 1114549810}
-  _subscribedSteps:
-  - 1
-  - 1
-  - 1
-  - 1
+  _subscribedSteps: 01010101
   _player: {fileID: 696357638}
   _sampleBank: {fileID: 872461045}
   _trackNb: 0
@@ -2005,7 +2022,7 @@ MonoBehaviour:
   _randomBypassChance: 0
   _envelopeModule: {fileID: 1554035491}
   _samples:
-  - _sampleName: 4735
+  - _sampleName: G5
     _pitch: 0.125
     _semiTones: -36
     _gain: 0.47826087
@@ -2140,6 +2157,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &308584600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters:
+  - {fileID: 1892386350}
+  - {fileID: 643468852}
+  _nbOfChannelsToFilter: 1
+  _selectedFilterSlot: 1
 --- !u!1 &332540559
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,6 +2280,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 398102743}
+  - 114: {fileID: 398102744}
   m_Layer: 0
   m_Name: 3DObjects
   m_TagString: Untagged
@@ -2272,6 +2306,31 @@ Transform:
   - {fileID: 64286496}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &398102744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 398102742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebcd2bee070a4544906259a70152470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &528342552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters: []
+  _nbOfChannelsToFilter: 1
+  _selectedFilterSlot: 0
 --- !u!1 &560988047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2343,6 +2402,21 @@ MonoBehaviour:
   output: 0
   fftSize: 0
   customFftSize: 1024
+--- !u!114 &643468852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c9069f87f4484bc3aca7f43676a1464, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotIndex: 1
+  _bypass: 0
+  _frequency: 4
+  _strength: 0.5
 --- !u!1 &670166450
 GameObject:
   m_ObjectHideFlags: 0
@@ -2372,9 +2446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Bypass: 0
   _Period: 0.25
-  _Steps:
-  - 1
-  - 1
+  _Steps: 0101
   _RandomBypassStep: 0
   _StepBypassChance: 0
   _pulseUnit: 0
@@ -2425,11 +2497,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tracks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _FiltersHandler: {fileID: 0}
-  _GainFilter: {fileID: 0}
+  - {fileID: 1791187871}
+  - {fileID: 18772612}
+  - {fileID: 1608507924}
+  _FiltersHandler: {fileID: 1876143301}
+  _GainFilter: {fileID: 1685410517}
   _Gain: 1
   _DoClip: 1
   _ClipThreshold: 1
@@ -2484,7 +2556,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2495,7 +2567,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -2506,7 +2578,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!4 &696357640
 Transform:
   m_ObjectHideFlags: 0
@@ -2584,9 +2656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulse: {fileID: 670166451}
-  _subscribedSteps:
-  - 1
-  - 1
+  _subscribedSteps: 0101
   _player: {fileID: 696357638}
   _sampleBank: {fileID: 872461045}
   _trackNb: 1
@@ -2597,11 +2667,11 @@ MonoBehaviour:
   _randomBypassChance: 0
   _envelopeModule: {fileID: 1520633492}
   _samples:
-  - _sampleName: 4335
+  - _sampleName: C5
     _pitch: 0.13243288
     _semiTones: -35
     _gain: 2
-  - _sampleName: 4735
+  - _sampleName: G5
     _pitch: 8
     _semiTones: 36
     _gain: 0.34782606
@@ -2741,7 +2811,7 @@ LineRenderer:
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
+  m_ReflectionProbeUsage: 0
   m_Materials:
   - {fileID: 2100000, guid: 285903c28b0d94b60b88d5396f14dceb, type: 2}
   m_SubsetIndices: 
@@ -2804,16 +2874,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patternA: {fileID: 1718526355}
   patternB: {fileID: 1457452444}
-  lineStartColor:
-    r: 1
-    g: 1
-    b: 1
-    a: 0
-  lineEndColor:
-    r: 0.53144
-    g: 0
-    b: 0.58823526
-    a: 0.8509804
+  lineStartColor: {r: 1, g: 1, b: 1, a: 0}
+  lineEndColor: {r: 0.53144, g: 0, b: 0.58823526, a: 0.8509804}
   lineFadeDuration: 0.5
   xFactor: 0.38
   yFactor: 0.1
@@ -2847,11 +2909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Bypass: 0
   _Period: 0.016
-  _Steps:
-  - 1
-  - 1
-  - 1
-  - 1
+  _Steps: 01010101
   _RandomBypassStep: 0
   _StepBypassChance: 0
   _pulseUnit: 2
@@ -2900,9 +2958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulse: {fileID: 670166451}
-  _subscribedSteps:
-  - 0
-  - 1
+  _subscribedSteps: 0001
   _player: {fileID: 696357638}
   _sampleBank: {fileID: 872461045}
   _trackNb: 1
@@ -2913,15 +2969,15 @@ MonoBehaviour:
   _randomBypassChance: 0
   _envelopeModule: {fileID: 1520848747}
   _samples:
-  - _sampleName: 4335
+  - _sampleName: C5
     _pitch: 1.4983071
     _semiTones: 7
     _gain: 1
-  - _sampleName: 4335
+  - _sampleName: C5
     _pitch: 1.2599211
     _semiTones: 4
     _gain: 1
-  - _sampleName: 4335
+  - _sampleName: C5
     _pitch: 1
     _semiTones: 0
     _gain: 1
@@ -2990,7 +3046,7 @@ MonoBehaviour:
   _lengthToPulseRatio: 1
   _maxSamples: 308705
   _samplesPerPixel: 38
-  _scrollXPosition: 1678.9343
+  _scrollXPosition: 1718.9343
 --- !u!1 &1520848746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3086,7 @@ MonoBehaviour:
   _lengthToPulseRatio: 1.2285714
   _maxSamples: 307584
   _samplesPerPixel: 133
-  _scrollXPosition: 20
+  _scrollXPosition: 60
 --- !u!4 &1520848748
 Transform:
   m_ObjectHideFlags: 0
@@ -3083,7 +3139,7 @@ MonoBehaviour:
   _lengthToPulseRatio: 1
   _maxSamples: 308705
   _samplesPerPixel: 55
-  _scrollXPosition: 403.4188
+  _scrollXPosition: 443.4188
 --- !u!4 &1554035492
 Transform:
   m_ObjectHideFlags: 0
@@ -3097,6 +3153,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1114549811}
   m_RootOrder: 0
+--- !u!114 &1608507924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b65fb624734e77bfcbccd76b526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackNb: 2
+  _filtersHandler: {fileID: 308584600}
+  _nextMute: 0
+  _player: {fileID: 696357638}
+  _gains:
+  - 0.34246576
+  - 0.65753424
+  _stereoGain: 1
+  _stereoPan: 0.65753424
+  _forcePerChannelControl: 0
 --- !u!1 &1620548069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3134,11 +3211,7 @@ MonoBehaviour:
   particles: {fileID: 36347503}
   patternLine: {fileID: 1072531629}
   fftLine: {fileID: 1771958094}
-  doubletimeLineColor:
-    r: 0.9424948
-    g: 0.4044118
-    b: 1
-    a: 0
+  doubletimeLineColor: {r: 0.9424948, g: 0.4044118, b: 1, a: 0}
   chords:
   - patternA:
     - 9
@@ -3215,6 +3288,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f646ef320da64ab1ad1eedf8569a7e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1685410517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272002972744e42008e33eea6fc141ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotIndex: 999
+  _bypass: 0
+  _gain: 1
+  _clip: 1
+  _clipThreshold: 1
 --- !u!1 &1688973311
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,9 +3375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pulse: {fileID: 670166451}
-  _subscribedSteps:
-  - 1
-  - 0
+  _subscribedSteps: 0100
   _player: {fileID: 696357638}
   _sampleBank: {fileID: 872461045}
   _trackNb: 0
@@ -3299,19 +3386,19 @@ MonoBehaviour:
   _randomBypassChance: 0
   _envelopeModule: {fileID: 1520848747}
   _samples:
-  - _sampleName: 4335
+  - _sampleName: C5
     _pitch: 1.6817929
     _semiTones: 9
     _gain: 1
-  - _sampleName: 4335
+  - _sampleName: C5
     _pitch: 1.4142135
     _semiTones: 6
     _gain: 1
-  - _sampleName: 4335
+  - _sampleName: C5
     _pitch: 1.122462
     _semiTones: 2
     _gain: 1
-  - _sampleName: 4335
+  - _sampleName: C5
     _pitch: 0.8408964
     _semiTones: -3
     _gain: 1
@@ -3408,16 +3495,8 @@ MonoBehaviour:
   observedAudioStreamComp: {fileID: 696357638}
   observeTrack: 1
   observedChannel: 0
-  startColor:
-    r: 0.25
-    g: 0.9068966
-    b: 1
-    a: 0.58431375
-  endColor:
-    r: 0
-    g: 0
-    b: 0
-    a: 0
+  startColor: {r: 0.25, g: 0.9068966, b: 1, a: 0.58431375}
+  endColor: {r: 0, g: 0, b: 0, a: 0}
   lineWidthStart: 0.05
   lineWidthEnd: 5
   xFactor: 0.25
@@ -3438,6 +3517,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 211218062}
   m_RootOrder: 1
+--- !u!114 &1791187871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b65fb624734e77bfcbccd76b526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackNb: 0
+  _filtersHandler: {fileID: 1984291370}
+  _nextMute: 0
+  _player: {fileID: 696357638}
+  _gains:
+  - 0.59931505
+  - 0.40068492
+  _stereoGain: 1
+  _stereoPan: 0.40068492
+  _forcePerChannelControl: 0
 --- !u!1 &1797412603
 GameObject:
   m_ObjectHideFlags: 0
@@ -3519,6 +3619,36 @@ MonoBehaviour:
   observedPatternIndex: 1
   pulseOutDuration: 0.2
   additionalLatency: 0
+--- !u!114 &1876143301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters:
+  - {fileID: 1685410517}
+  _nbOfChannelsToFilter: 2
+  _selectedFilterSlot: 0
+--- !u!114 &1892386350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af9780d0ea2f46949bc447de0c7f1ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotIndex: 0
+  _bypass: 0
+  _threshold: 0.1
+  _mix: 1
 --- !u!1 &1965268221
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,6 +3760,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   step: 0
   pattern: {fileID: 761872628}
+--- !u!114 &1984291370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters: []
+  _nbOfChannelsToFilter: 1
+  _selectedFilterSlot: 0
 --- !u!1 &2068877431
 GameObject:
   m_ObjectHideFlags: 0

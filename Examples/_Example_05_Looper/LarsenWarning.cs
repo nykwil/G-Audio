@@ -19,8 +19,8 @@ namespace GAudio.Examples
 			yield return Application.RequestUserAuthorization( UserAuthorization.Microphone );
 			if (Application.HasUserAuthorization( UserAuthorization.Microphone ) ) 
 			{
-                SceneManager.LoadScene( 1 );
-			} 
+                SceneManager.LoadScene(1);
+            } 
 			else
 			{
 				StartCoroutine( Request () );

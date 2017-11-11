@@ -5,6 +5,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 #if GAT_IOS
 using GAudio.iOS;
 #endif
@@ -153,6 +154,8 @@ namespace GAudio
 				EditorApplication.update += Update;
 			}
 			#endif
+
+            SceneManager.sceneLoaded += OnLevelFinishedLoading;
 		}
 		
 		void OnDisable()
@@ -163,6 +166,8 @@ namespace GAudio
 			//For main thread suspension detection
 			EditorApplication.update -= Update;
 			#endif
+
+            SceneManager.sceneLoaded -= OnLevelFinishedLoading;
 		}
 		
 		void Start()
@@ -258,8 +263,8 @@ namespace GAudio
 			//System.GC.Collect();
 		}
 		
-		void OnLevelWasLoaded()
-		{
+		void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+        {
 			GATInfo.UniqueInstance.SetSyncDspTime( AudioSettings.dspTime );
 		}
 		

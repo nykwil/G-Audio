@@ -13,20 +13,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sampleRate: 44100
   _sampleInfos:
-  - _name: 4335
+  - _name: C5
     _midiCode: 72
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4335
+    _pathInResources: DemoSamples_44.1/C5
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 6131616634616666326537313334346266613635653832316437646265353461
+    _guid: a1af4aff2e71344bfa65e821d7dbe54a
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: 4735
+  - _name: G5
     _midiCode: 79
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4735
+    _pathInResources: DemoSamples_44.1/G5
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 3432616364323735326533626134613261396132313534306562353362343064
+    _guid: 42acd2752e3ba4a2a9a21540eb53b40d
     _isStreamingAsset: 0
     clipStatus: 0
   _totalUncompressedBytes: 2469640

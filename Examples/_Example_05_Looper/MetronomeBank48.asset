@@ -13,11 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sampleRate: 48000
   _sampleInfos:
-  - _name: 4735
+  - _name: G5
     _midiCode: 0
-    _pathInResources: 44656d6f53616d706c65735f34382f4735
+    _pathInResources: DemoSamples_48/G5
     _numChannels: 1
     _samplesPerChannel: 336006
-    _guid: 3437663037613232303061313834393261613235376437336136336230663064
+    _guid: 47f07a2200a18492aa257d73a63b0f0d
+    _isStreamingAsset: 0
     clipStatus: 0
   _totalUncompressedBytes: 1344024

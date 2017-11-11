@@ -90,6 +90,58 @@ NavMeshSettings:
     cellSize: 0.16666666
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &13576931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 272002972744e42008e33eea6fc141ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotIndex: 999
+  _bypass: 0
+  _gain: 1
+  _clip: 1
+  _clipThreshold: 1
+--- !u!114 &228685160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b65fb624734e77bfcbccd76b526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackNb: 2
+  _filtersHandler: {fileID: 1189359939}
+  _nextMute: 0
+  _player: {fileID: 946527367}
+  _gains:
+  - 0.5
+  - 0.5
+  _stereoGain: 1
+  _stereoPan: 0.5
+  _forcePerChannelControl: 0
+--- !u!114 &500717827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0af9780d0ea2f46949bc447de0c7f1ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotIndex: 0
+  _bypass: 0
+  _threshold: 0.1
+  _mix: 0.51369864
 --- !u!1 &946527366
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,12 +171,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tracks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _FiltersHandler: {fileID: 0}
-  _GainFilter: {fileID: 0}
+  - {fileID: 2017629772}
+  - {fileID: 1061012607}
+  - {fileID: 228685160}
+  - {fileID: 1758751572}
+  _FiltersHandler: {fileID: 2119791064}
+  _GainFilter: {fileID: 13576931}
   _Gain: 1
   _DoClip: 1
   _ClipThreshold: 1
@@ -150,7 +202,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 1939277764}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -215,6 +267,57 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &957827347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters:
+  - {fileID: 1523142031}
+  _nbOfChannelsToFilter: 1
+  _selectedFilterSlot: 0
+--- !u!114 &959577285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters:
+  - {fileID: 500717827}
+  _nbOfChannelsToFilter: 1
+  _selectedFilterSlot: 0
+--- !u!114 &1061012607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b65fb624734e77bfcbccd76b526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackNb: 1
+  _filtersHandler: {fileID: 959577285}
+  _nextMute: 0
+  _player: {fileID: 946527367}
+  _gains:
+  - 0.5
+  - 0.5
+  _stereoGain: 1
+  _stereoPan: 0.5
+  _forcePerChannelControl: 0
 --- !u!1 &1154756908
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +365,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1161340765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1223474e5658a476cad434e53e32fbff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotIndex: 0
+  _bypass: 0
+  _fq: 0.008588756
+  _frequency: 412.2603
+  _peakGain: 5
+  _Q: 0.76
+  _mix: 1
+--- !u!114 &1189359939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters:
+  - {fileID: 1161340765}
+  _nbOfChannelsToFilter: 1
+  _selectedFilterSlot: 0
 --- !u!1 &1514111875
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +501,24 @@ MonoBehaviour:
   - 53746572656f5761762e776176
   mode: 1
   pathType: 2
+--- !u!114 &1523142031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2670ad26ed79247afa882a30299a0db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slotIndex: 0
+  _bypass: 0
+  _fq: 0.047539953
+  _frequency: 2281.9177
+  _peakGain: 5
+  _Q: 0.76
+  _mix: 1
 --- !u!1 &1564718434
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,29 +612,74 @@ Transform:
   - {fileID: 946527368}
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!83 &1939277764
-AudioClip:
+--- !u!114 &1581723996
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: G-Audio
-  m_LoadType: 0
-  m_Channels: 0
-  m_Frequency: 0
-  m_BitsPerSample: 0
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters: []
+  _nbOfChannelsToFilter: 1
+  _selectedFilterSlot: 0
+--- !u!114 &1758751572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b65fb624734e77bfcbccd76b526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackNb: 3
+  _filtersHandler: {fileID: 957827347}
+  _nextMute: 0
+  _player: {fileID: 946527367}
+  _gains:
+  - 0.5
+  - 0.5
+  _stereoGain: 1
+  _stereoPan: 0.5
+  _forcePerChannelControl: 0
+--- !u!114 &2017629772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190b65fb624734e77bfcbccd76b526dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trackNb: 0
+  _filtersHandler: {fileID: 1581723996}
+  _nextMute: 0
+  _player: {fileID: 946527367}
+  _gains:
+  - 0.5
+  - 0.5
+  _stereoGain: 1
+  _stereoPan: 0.5
+  _forcePerChannelControl: 0
+--- !u!114 &2119791064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b79e17acaa29f41b989a990ff262f6ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filters:
+  - {fileID: 13576931}
+  _nbOfChannelsToFilter: 2
+  _selectedFilterSlot: 1

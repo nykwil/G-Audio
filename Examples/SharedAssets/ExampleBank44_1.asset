@@ -13,68 +13,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sampleRate: 44100
   _sampleInfos:
-  - _name: 4332
+  - _name: C2
     _midiCode: 36
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4332
+    _pathInResources: DemoSamples_44.1/C2
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 3732663165343062316466356134353130616538376134313466636664353434
+    _guid: 72f1e40b1df5a4510ae87a414fcfd544
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: 4234
+  - _name: B4
     _midiCode: 71
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4234
+    _pathInResources: DemoSamples_44.1/B4
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 3766623834653339626435643434613566616631666536383264646663323331
+    _guid: 7fb84e39bd5d44a5faf1fe682ddfc231
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: 4335
+  - _name: C5
     _midiCode: 72
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4335
+    _pathInResources: DemoSamples_44.1/C5
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 6131616634616666326537313334346266613635653832316437646265353461
+    _guid: a1af4aff2e71344bfa65e821d7dbe54a
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: 4535
+  - _name: E5
     _midiCode: 76
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4535
+    _pathInResources: DemoSamples_44.1/E5
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 3239346165303237666366366134343731613463393565663334613534323134
+    _guid: 294ae027fcf6a4471a4c95ef34a54214
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: 4735
+  - _name: G5
     _midiCode: 79
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4735
+    _pathInResources: DemoSamples_44.1/G5
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 3432616364323735326533626134613261396132313534306562353362343064
+    _guid: 42acd2752e3ba4a2a9a21540eb53b40d
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: 4135
+  - _name: A5
     _midiCode: 81
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4135
+    _pathInResources: DemoSamples_44.1/A5
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 6135373865373462353234643234363736393765633330613435343562646231
+    _guid: a578e74b524d2467697ec30a4545bdb1
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: 4235
+  - _name: B5
     _midiCode: 83
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4235
+    _pathInResources: DemoSamples_44.1/B5
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 3138373535376364393633616434643736613033623030383338386231386136
+    _guid: 187557cd963ad4d76a03b008388b18a6
     _isStreamingAsset: 0
     clipStatus: 0
-  - _name: 4336
+  - _name: C6
     _midiCode: 84
-    _pathInResources: 44656d6f53616d706c65735f34342e312f4336
+    _pathInResources: DemoSamples_44.1/C6
     _numChannels: 1
     _samplesPerChannel: 308705
-    _guid: 3665666133333062663164613834376637616335616238343232616161393562
+    _guid: 6efa330bf1da847f7ac5ab8422aaa95b
     _isStreamingAsset: 0
     clipStatus: 0
   _totalUncompressedBytes: 9878560
