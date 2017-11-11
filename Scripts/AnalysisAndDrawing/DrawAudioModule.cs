@@ -61,9 +61,10 @@ namespace GAudio
             _lineRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 			_lineRenderer.receiveShadows = false;
 			SetVertexCount();
-			_lineRenderer.SetColors( startColor, endColor );
-			_lineRenderer.SetWidth( lineWidthStart, lineWidthEnd );
-			_lineRenderer.material = lineMaterial;
+            _lineRenderer.startColor = startColor;
+            _lineRenderer.endColor = endColor;
+            _lineRenderer.startWidth = lineWidthStart;
+            _lineRenderer.endWidth = lineWidthEnd; _lineRenderer.material = lineMaterial;
 			_lineRenderer.useWorldSpace = false;
 			
 			if( handleNoMoreDataInStart )
@@ -75,8 +76,8 @@ namespace GAudio
 		// Overridable for custom behaviour.
 		protected virtual void SetVertexCount()
 		{
-			_lineRenderer.SetVertexCount( _data.Length );
-		}
+            _lineRenderer.numPositions = _data.Length;
+        }
 		
 		//This override is called when you can thread safely handle new data. Let's draw it.
 		protected override void HandleAudioDataUpdate()

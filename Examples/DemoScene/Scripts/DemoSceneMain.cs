@@ -301,10 +301,11 @@ namespace GAudio.Examples
 			{
 				lerpVal 	+= Time.deltaTime * factor;
 				appliedColor = Color.Lerp( fromColor, targetColor, lerpVal );
-				
-				fftLine.Line.SetColors( appliedColor, fftLine.endColor );
-				
-				yield return null;
+
+                fftLine.Line.startColor = appliedColor;
+                fftLine.Line.endColor = fftLine.endColor;
+
+                yield return null;
 			}
 		}
 	}
